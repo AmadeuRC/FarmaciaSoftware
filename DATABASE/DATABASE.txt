@@ -1,0 +1,32 @@
+CREATE DATABASE FARMACIA 
+GO
+
+CREATE TABLE [dbo].[usuarios] (
+    [id]       INT          IDENTITY (1, 1) NOT NULL,
+    [userRole] VARCHAR (50) NOT NULL,
+    [Nome]     VARCHAR (50) NOT NULL,
+    [dob]      VARCHAR (50) NOT NULL,
+    [mobile]   BIGINT       NOT NULL,
+    [email]    VARCHAR (50) NOT NULL,
+    [username] VARCHAR (50) NOT NULL,
+    [pass]     VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC),
+    UNIQUE NONCLUSTERED ([username] ASC),
+    UNIQUE NONCLUSTERED ([Nome] ASC)
+);
+
+CREATE TABLE [dbo].[Medicamentos] (
+    [id]         INT          IDENTITY (1, 1) NOT NULL,
+    [mid]        VARCHAR (50) NOT NULL,
+    [Nome]       VARCHAR (50) NOT NULL,
+    [mNº]        VARCHAR (50) NOT NULL,
+    [fData]      VARCHAR (50) NOT NULL,
+    [eData]      VARCHAR (50) NOT NULL,
+    [Quantidade] BIGINT       NOT NULL,
+    [Preço]      BIGINT       NOT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC),
+    UNIQUE NONCLUSTERED ([mNº] ASC),
+    UNIQUE NONCLUSTERED ([Nome] ASC),
+    UNIQUE NONCLUSTERED ([mid] ASC)
+);
+
